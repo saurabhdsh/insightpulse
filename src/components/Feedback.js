@@ -978,6 +978,14 @@ function Feedback() {
               <span className="text-2xl font-bold text-indigo-700">AI Trend Analysis</span>
             </div>
             {/* 0. Sentiment Distribution Pie Chart */}
+            {/* High-level AI-generated sentiment description */}
+            <div className="mb-2 text-gray-700 text-base font-medium">
+              {sentimentCounts['negative'] > sentimentCounts['positive']
+                ? 'Customer sentiment is trending negative, with many users expressing dissatisfaction with the UI and overall experience.'
+                : sentimentCounts['positive'] > sentimentCounts['negative']
+                ? 'Customer sentiment is mostly positive, indicating satisfaction with recent improvements.'
+                : 'Customer sentiment is mixed, with both positive and negative feedback received.'}
+            </div>
             <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
               <div className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2"><TrendingUp className="text-indigo-500" /> Sentiment Distribution (Last 2 Weeks)</div>
               <ResponsiveContainer width="100%" height={260}>
