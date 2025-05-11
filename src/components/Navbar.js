@@ -7,10 +7,14 @@ import {
   Stars as FeaturesIcon,
   Warning as IncidentsIcon,
   AutoGraph as AnalyticsIcon,
-  Lightbulb as LightbulbIcon
+  Lightbulb as LightbulbIcon,
+  AccountCircle as AccountCircleIcon,
+  AutoAwesome as AutoAwesomeIcon
 } from '@mui/icons-material';
 
 function Navbar() {
+  const username = localStorage.getItem('insightpulse_logged_in') === 'true' ? 'saurabh' : null;
+
   return (
     <nav className="bg-gradient-to-r from-gray-900 to-gray-800 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,6 +63,18 @@ function Navbar() {
               <span>Feedback</span>
             </NavLink>
             <NavLink 
+              to="/ai-ideation" 
+              className={({ isActive }) => 
+                `flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200
+                ${isActive 
+                  ? 'bg-gray-700 text-white' 
+                  : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`
+              }
+            >
+              <AutoAwesomeIcon className="text-lg" />
+              <span>AI Ideation</span>
+            </NavLink>
+            <NavLink 
               to="/incidents" 
               className={({ isActive }) => 
                 `flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200
@@ -70,6 +86,14 @@ function Navbar() {
               <IncidentsIcon className="text-lg" />
               <span>AI Incident Management</span>
             </NavLink>
+            {username && (
+              <div className="ml-6 flex items-center gap-2">
+                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg shadow">
+                  {username.charAt(0).toUpperCase()}
+                </div>
+                <span className="text-gray-200 font-semibold text-sm">{username}</span>
+              </div>
+            )}
           </div>
         </div>
       </div>
