@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { 
   Dashboard as DashboardIcon,
   Feedback as FeedbackIcon,
@@ -14,6 +14,12 @@ import {
 
 function Navbar() {
   const username = localStorage.getItem('insightpulse_logged_in') === 'true' ? 'saurabh' : null;
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('insightpulse_logged_in');
+    navigate('/login');
+  };
 
   return (
     <nav className="bg-gradient-to-r from-gray-900 to-gray-800 shadow-lg">
@@ -92,6 +98,12 @@ function Navbar() {
                   {username.charAt(0).toUpperCase()}
                 </div>
                 <span className="text-gray-200 font-semibold text-sm">{username}</span>
+                <button
+                  onClick={handleLogout}
+                  className="ml-2 px-3 py-1 rounded-lg bg-gradient-to-r from-red-500 to-pink-500 text-white font-semibold text-xs shadow hover:from-red-600 hover:to-pink-600 transition"
+                >
+                  Logout
+                </button>
               </div>
             )}
           </div>
