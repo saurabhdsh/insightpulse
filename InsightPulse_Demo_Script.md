@@ -20,8 +20,6 @@
 
 *"Now, let me demonstrate our flagship feature - the Voice of Customer Analyzer. This is where InsightPulse truly shines. Watch as our AI agents automatically analyze customer feedback, identify root causes, and create actionable resolution plans.*
 
-*Here we see a customer experiencing login issues. Our AI has automatically detected the problem, analyzed the session recording, and assigned it to the appropriate team. Notice how the AI agent has already identified that the session timeout is too aggressive and suggested extending it to 30 minutes.*
-
 *The VoC Analyzer provides complete visibility into customer journeys, including session recordings, technical details, and AI-generated insights. Each case is automatically prioritized, routed, and tracked through resolution. This level of automation and intelligence is unprecedented in the industry."*
 
 ## **AI IDEATION & TREND ANALYSIS (2:15 - 2:45)**
